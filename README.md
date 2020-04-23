@@ -1,4 +1,4 @@
-## ReactiveX : observabal streams으로 Async 프로그래밍을 하기 위한 API
+# ReactiveX : observabal streams으로 Async 프로그래밍을 하기 위한 API
 
 ### Sync/Async
 
