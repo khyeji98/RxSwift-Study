@@ -33,8 +33,7 @@
 - error가 나거나 특정상황일 때 모든 작업을 취소시킬 때 사용하기 유용함
 - RxSwift나 PromiseKit을 사용하지 않고 dipose하려면 OperationQueue와 귀찮은 작업들을 해야함
 
-### DisposeBag
-**: dispose를 담는 가방**
+### DisposeBag : dispose를 담는 가방
 
 - DisposeBag에 insert 되어있는 작업을 한번에 dispose해줌
 
