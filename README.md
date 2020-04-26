@@ -11,6 +11,7 @@
 > **Sync를 Async로 하려면 DispatchQueue하면 됨**
 >
 > `DispatchQueue.global().async`은 concurrence(동시 발생)을 async방식으로 하는 것
+>
 > `DispatchQueue.main.async`은 main thread로 돌리는 것
 
 ### PromiseKit
