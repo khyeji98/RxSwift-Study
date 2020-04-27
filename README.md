@@ -100,4 +100,4 @@
   
   - `.observeOn(ConcurrentDispatchQueueScheduler(qos:))` : Main Thread에서 동작중인 작업을 Concurrency Thread에서 동작시킴
   - `.observeOn(MainScheduler.instance)` : Concurrency Thread에서 동작중인 쟉업을 Main Thread에서 동작시킴
-    > qos는 우선순위로, 주로 .default 사용
+  *qos는 우선순위로, 주로 .default 사용*
