@@ -40,6 +40,7 @@
 - dipose한 DisposeBag 안의 Disposable들은 없어짐
 
 ### Operators
+#### [RxMarble Diagram](https://rxmarbles.com)
 
 1. just : creating operator
 
@@ -54,21 +55,27 @@
 
 3. Map : transforming operator
 
-- `.just`를 거친 데이터를 mapping해주는 Operator
+- `.just`를 거친 **데이터를 mapping하고 데이터로 반환**하는 Operator
 - `.map`은 처음부터 연결되는 것이 아니라, **기존에 존재하는 stream에 연결하는 Operator**
 *예시1) Array인 경우, from을 거치고 map을 통해 `.count`로 mapping시켜 Int타입으로 바뀌고 값이 내려감*
 *예시2) mapping을 연속해서 사용할 경우, 링크를 URL객체로 변환시키고 data를 가져와서 UIImage로 가져올 수도 있음*
 
-4. 
+4. FlatMap : trsnsforming operator
 
-4. Filter : filtering operator
+- **데이터를 stream으로 반환**하는 Operator
+- 현재 데이터의 mapping이 끝나지 않았는데 다음 데이터가 넘어오면 반환되는 stream 내에서 중첩됨
+
+5. Filter : filtering operator
 
 - `.filter`는 True값만 통과시켜주는 Operator
 - filter도 **기존에 존재하는 stream에 연결하는 Operator**
 
-5. First : filtering operator
+6. First : filtering operator
 
 - 기존 stream 데이터에선 첫번째 항목만 받고 complete되는 Operator
 - 파생된 Operator들은 Marble Diagram을 통해 이해하고 상황에 맞게 사용하면 됨
 
+7. Concat : Mathematical and Aggregate Operator
+
+- 여러개의 Observable을 받으면 첫번째 Observable이 complete되는 동시에 두번째 Observable을 연결시키면서 모든 Observable을 하나의 stream으로 반환하는 Operator
 
