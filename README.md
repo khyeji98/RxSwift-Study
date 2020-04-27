@@ -110,7 +110,7 @@
 
 ### Side-Effect
 
-- {}밖의 외부에 영향을 주는 동작
+- { }밖의 외부에 영향을 주는 동작
 - side-effect를 허용해주는 곳
   - .subscribe()
   - .do() : 특정 이벤트가 발생했을 때 콜백해주는 method, 요소를 수정하진 않고 전달만 함
@@ -119,4 +119,3 @@
 : 등록은 podfile에 `pod 'RxCocoa'`
 
 - UIKit의 요소들을 다룰 때 좋을만한 extension들이 추가로 있음
-
