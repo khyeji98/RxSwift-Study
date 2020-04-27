@@ -43,21 +43,32 @@
 
 1. just : creating operator
 
-- Observabal에서 create해서 seal in에 넣어서 내려오는 것과 같은 기능
-- Observabal.just의 문자열이 `.subscribe`할 때 첫번째 인자로 그대로 내려옴
-- 문자열이 아니라 Array여도 그대로 내려옴
+- 데이터가 모두 create되면 complete되는 Operator
+- Observabal.just의 데이터가 `.subscribe`할 때 첫번째 인자로 그대로 내려옴(데이터 타입은 Array도 가능)
+> **complete되면 DisposeBag에서 없어진다.(for 모든 Operator)**
 
 2. From : creating operator
 
-- Array에 있는 요소들을 하나씩 떼어서 내려줌(Array 요소 타입은 Any)
+- Array에 있는 데이터 요소들을 하나씩 떼어서 내려줌(Array 요소 타입은 Any)
+- Array에 있는 요소들을 모두 create되면 complete되는 Operator
 
 3. Map : transforming operator
 
-- `.just` 문자열이 `.map`을 먼저 거치면서 문자열 뒤에 "RxSwift"를 추가시키고, 바뀐(mapping된) 문자열이 내려감
-- Array인 경우, Array를 from을 거쳐 내려보내면서 mapping되면 `.count`를 시켜 Int타입으로 바뀌고 값이 내려감
-*예시) mapping을 연속해서 사용할 경우, 링크를 URL객체로 변환시키고 data를 가져와서 UIImage로 가져올 수도 있음*
+- `.just`를 거친 데이터를 mapping해주는 Operator
+- `.map`은 처음부터 연결되는 것이 아니라, **기존에 존재하는 stream에 연결하는 Operator**
+*예시1) Array인 경우, from을 거치고 map을 통해 `.count`로 mapping시켜 Int타입으로 바뀌고 값이 내려감*
+*예시2) mapping을 연속해서 사용할 경우, 링크를 URL객체로 변환시키고 data를 가져와서 UIImage로 가져올 수도 있음*
+
+4. 
 
 4. Filter : filtering operator
 
-- `.filter`는 True값만 통과
+- `.filter`는 True값만 통과시켜주는 Operator
+- filter도 **기존에 존재하는 stream에 연결하는 Operator**
+
+5. First : filtering operator
+
+- 기존 stream 데이터에선 첫번째 항목만 받고 complete되는 Operator
+- 파생된 Operator들은 Marble Diagram을 통해 이해하고 상황에 맞게 사용하면 됨
+
 
