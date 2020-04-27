@@ -76,9 +76,9 @@
 
 - 여러개의 Observable을 받으면 첫번째 Observable이 complete되는 동시에 두번째 Observable을 연결시키면서 모든 Observable을 하나의 stream으로 반환하는 Operator
 
-### Operator 처리하는 Methods
+### Operator 처리
 
-1. .subscribe
+**.subscribe**
 
 - 모든 Operators를 거친 최종 데이터를 받는 method
 - return 타입이 Disposable(DisposeBag에 담아서 처리)
@@ -86,8 +86,9 @@
   - .next : 데이터 전달할 때 호출  
   - .eroor : 오류가 났들 때 호출  
   - .completed : 모든 step이 다 끝났을 때 호출  
-  **error가 나거나 completed되면 DisposeBag에서도 사라짐**
+  - **error가 나거나 completed되면 DisposeBag에서도 사라짐**
 - `.subscribe(on:)`과 비슷한 method로, `.subscribe(onNext:,onError:,onCompleted:,onDisposed:)`
   - onNext 호출되었을 때 : onCopleted, onDisposed 호출  
   - onError 호출되었을 때 : onDisposed 호출  
   - onDisposed가 호출되는 경우 : complete되거는 경우, error나는 경우 등
+
