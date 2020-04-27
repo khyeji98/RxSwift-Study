@@ -3,8 +3,6 @@
 ### ReactiveX
 **: observabal streams으로 Async 프로그래밍을 하기 위한 API (즉, Swift로 Reactive 프로그래밍을 하기 위한 라이브러리)**
 
----
-
 ### Sync/Async
 
 - Sync(동기) : 작업을 하면 다른 작업 못하게 막음
