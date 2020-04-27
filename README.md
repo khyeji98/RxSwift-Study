@@ -1,5 +1,6 @@
 ## ReactiveX
-### : observabal streams으로 Async 프로그래밍을 하기 위한 API (즉, Swift로 Reactive 프로그래밍을 하기 위한 라이브러리)
+### : observabal streams으로 Async 프로그래밍을 하기 위한 API
+###  (즉, Swift로 Reactive 프로그래밍을 하기 위한 라이브러리)
 
 ---
 
