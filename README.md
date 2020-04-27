@@ -98,6 +98,5 @@
   
   1, observeOn() : Async하지 않은 작업을 멀티스레딩함으로써 Async하게 작업함
   
-  - `.observeOn(ConcurrentDispatchQueueScheduler(qos:))` : Main Thread에서 동작중인 작업을 Concurrency Thread에서 동작시킴
-  - `.observeOn(MainScheduler.instance)` : Concurrency Thread에서 동작중인 쟉업을 Main Thread에서 동작시킴  
-  *qos는 우선순위로, 주로 .default 사용*
+  - `.observeOn(ConcurrentDispatchQueueScheduler(qos:))` : Main Thread에서 동작중인 작업을 Concurrency Thread에서 동작시킴(*qos는 우선순위로, 주로 .default 사용*)
+  - `.observeOn(MainScheduler.instance)` : Concurrency Thread에서 동작중인 쟉업을 Main Thread에서 동작시킴
