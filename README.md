@@ -94,9 +94,16 @@
 - 주어진 작업들을 스케쥴링하는 작업
 - Async하게 작업하기 위해 multi-thread로 스케쥴링
 
-  #### 멀티스레딩 핵심 method
+  #### 멀티스레딩 핵심 method : Main Thread <-> Concurrence Thread
   
-  1, observeOn() : Async하지 않은 작업을 멀티스레딩함으로써 Async하게 작업함
+  1. observeOn()
   
-  - `.observeOn(ConcurrentDispatchQueueScheduler(qos:))` : Main Thread에서 동작중인 작업을 Concurrency Thread에서 동작시킴(*qos는 우선순위로, 주로 .default 사용*)
-  - `.observeOn(MainScheduler.instance)` : Concurrency Thread에서 동작중인 쟉업을 Main Thread에서 동작시킴
+  - observeOn()의 아래줄부터 적용됨
+  - `.observeOn(ConcurrentDispatchQueueScheduler(qos:))` : Main Thread에서 동작중인 작업을 Concurrence Thread에서 동작시킴 (*qos는 우선순위로, 주로 .default 사용*)
+  - `.observeOn(MainScheduler.instance)` : Concurrence Thread에서 동작중인 쟉업을 Main Thread에서 동작시킴
+
+  2. subscribeOn() : 
+  
+  - .subscribe를 쓰는 경우는 무조건 첫줄부터 적용됨
+  - ㄴ
+  - `.subscribeOn(ConcurrentDispathQueueScheduler(qos:)))`
