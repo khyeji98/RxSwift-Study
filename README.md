@@ -76,9 +76,7 @@
 
 - 여러개의 Observable을 받으면 첫번째 Observable이 complete되는 동시에 두번째 Observable을 연결시키면서 모든 Observable을 하나의 stream으로 반환하는 Operator
 
-### Operator 처리
-
-**.subscribe**
+### Operator 처리 : .subscribe
 
 - 모든 Operators를 거친 최종 데이터를 받는 method
 - return 타입이 Disposable(DisposeBag에 담아서 처리)
