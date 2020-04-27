@@ -82,12 +82,11 @@
 
 - 모든 Operators를 거친 최종 데이터를 받는 method
 - return 타입이 Disposable(DisposeBag에 담아서 처리)
-- 최종 데이터를 받고 사용하려면 `.subscribe(on: EventType)`
-  > EventType은 EnumType  
-  > - .next : 데이터 전달할 때 호출  
-  > - .eroor : 오류가 났들 때 호출  
-  > - .completed : 모든 step이 다 끝났을 때 호출  
-  > **error가 나거나 completed되면 DisposeBag에서도 사라짐**
+- 최종 데이터를 받고 사용하려면 `.subscribe(on: EventType)` (EventType은 EnumType)
+  - .next : 데이터 전달할 때 호출  
+  - .eroor : 오류가 났들 때 호출  
+  - .completed : 모든 step이 다 끝났을 때 호출  
+  **error가 나거나 completed되면 DisposeBag에서도 사라짐**
 - `.subscribe(on:)`과 비슷한 method로, `.subscribe(onNext:,onError:,onCompleted:,onDisposed:)`
   - onNext 호출되었을 때 : onCopleted, onDisposed 호출  
   - onError 호출되었을 때 : onDisposed 호출  
