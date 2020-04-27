@@ -57,8 +57,8 @@
 
 - `.just`를 거친 **데이터를 mapping하고 데이터로 반환**하는 Operator
 - `.map`은 처음부터 연결되는 것이 아니라, **기존에 존재하는 stream에 연결하는 Operator**
-*예시1) Array인 경우, from을 거치고 map을 통해 `.count`로 mapping시켜 Int타입으로 바뀌고 값이 내려감*
-*예시2) mapping을 연속해서 사용할 경우, 링크를 URL객체로 변환시키고 data를 가져와서 UIImage로 가져올 수도 있음*
+> *예시1) Array인 경우, from을 거치고 map을 통해 `.count`로 mapping시켜 Int타입으로 바뀌고 값이 내려감*  
+> *예시2) mapping을 연속해서 사용할 경우, 링크를 URL객체로 변환시키고 data를 가져와서 UIImage로 가져올 수도 있음*
 
 4. FlatMap : trsnsforming operator
 
