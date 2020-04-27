@@ -36,8 +36,7 @@
 - DisposeBag에 insert 되어있는 작업을 한번에 dispose해줌
 - dipose한 DisposeBag 안의 Disposable들은 없어짐
 
-### Operators
-#### [RxMarble Diagram](https://rxmarbles.com)
+### Operators ([RxMarble Diagram](https://rxmarbles.com))
 
 1. just : creating operator
 
