@@ -90,3 +90,14 @@
   - onError 호출되었을 때 : onDisposed 호출  
   - onDisposed가 호출되는 경우 : complete되거는 경우, error나는 경우 등
 
+### Scheduler
+
+- 주어진 작업들을 스케쥴링하는 작업
+- Async하게 작업하기 위해 multi-thread로 스케쥴링
+
+#### - 멀티스레딩 핵심 method
+
+Method를 IBAction으로 받으면 Main Thread에서 동작하기 때문에 Async하지 않다.  
+그래서 Concurrency Thread에서 동작시키기 위해 사용하는 method `.observeOn(ConcurrentDispatchQueueScheduler(qos: .default))`  
+qos : 우선순위
+도중에 다시 Main Thread에서 동작시키고 싶을 때 사용하는 method `.observeOn(MainScheduler.instance)`
