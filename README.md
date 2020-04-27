@@ -95,9 +95,10 @@
 - 주어진 작업들을 스케쥴링하는 작업
 - Async하게 작업하기 위해 multi-thread로 스케쥴링
 
-#### - 멀티스레딩 핵심 method
-
-Method를 IBAction으로 받으면 Main Thread에서 동작하기 때문에 Async하지 않다.  
-그래서 Concurrency Thread에서 동작시키기 위해 사용하는 method `.observeOn(ConcurrentDispatchQueueScheduler(qos: .default))`  
-qos : 우선순위
-도중에 다시 Main Thread에서 동작시키고 싶을 때 사용하는 method `.observeOn(MainScheduler.instance)`
+  #### 멀티스레딩 핵심 method
+  
+  1, observeOn() : Async하지 않은 작업을 멀티스레딩함으로써 Async하게 작업함
+  
+  - `.observeOn(ConcurrentDispatchQueueScheduler(qos:))` : Main Thread에서 동작중인 작업을 Concurrency Thread에서 동작시킴
+  - `.observeOn(MainScheduler.instance)` : Concurrency Thread에서 동작중인 쟉업을 Main Thread에서 동작시킴
+    > qos는 우선순위로, 주로 .default 사용
