@@ -9,10 +9,8 @@
 - Sync(동기) : 작업을 하면 다른 작업 못하게 막음
 - Async(비동기) : 작업을 해도 다른 작업은 계속 실행됨
 
-> **Sync를 Async로 하려면 DispatchQueue하면 됨**
->
-> `DispatchQueue.global().async`은 concurrence(동시 발생)을 async방식으로 하는 것
->
+> **Sync를 Async로 하려면 DispatchQueue하면 됨**  
+> `DispatchQueue.global().async`은 concurrence(동시 발생)을 async방식으로 하는 것  
 > `DispatchQueue.main.async`은 main thread로 돌리는 것
 
 ### RxSwift
