@@ -21,7 +21,7 @@
 
 ### Observable
 
-- Observable : 하나 또는 연속된 항목을 배출
+- Observable : 하나 또는 연속된 항목을 비동기적으로 배출하는 기능
 - Observer는 Observable을 구독하고, Observable은 항목을 배출하거나 Observable의 메서드 호출을 통해 Observer에게 알람을 보냄
 
 ### Disposable
