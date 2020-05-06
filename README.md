@@ -21,7 +21,8 @@
 
 ### Observable
 
-- Observable : 하나 또는 연속된 항목을 비동기적으로 배출하는 기능
+- Observer : Observable에 들어가는(?) 항목
+- Observable : 하나 또는 연속된 항목(Observer)을 비동기적으로 배출하는 기능
 - Observer는 Observable을 구독하고, Observable은 항목을 배출하거나 Observable의 메서드 호출을 통해 Observer에게 알람을 보냄
 
 ### Disposable
@@ -108,6 +109,29 @@
   - .subscireOn()은 어느 줄에 작성하던 순서 상관없이 첫줄부터 적용됨
   - `.subscribeOn(ConcurrentDispathQueueScheduler(qos:)))`
 
+### Subject
+
+- Observer, Observable 모두로 동작 가능 즉, **데이터를 넣어줄 수도 있고 subscribe도 할 수 있음**
+
+1. PublishSubject
+
+- subscribe하면 데이터값을 방출하다가, 다음 subscribe가 일어나면 계속해서 방출되던 데이터가 방출됨(별다른 행동이 없음)
+
+2. BehaviorSubject
+
+- subscribe하면 초기값(default값)으 받고 다음 subscribe 전까지는 원래 Observable 내에 있던 데이터를 방출함
+- 다음 subscribe이 발생되면 가장 최근 데이터값을 방출함
+- Error가 났을 경우, 다음 subscribe한 Observable 모두에게 error값을 방출함(가장 최근값이 error값이기 때문)
+
+3. ReplaySubject
+
+- subscribe하면 처음엔 PublishSubject처럼 데이터를 방출하고, 다음 subscribe가 일어나면 지금까지 방출된 데이터를 모두 방출하고 계속해서 방출함
+
+4. AsyncSubject
+
+- subscribe를 해도 현재 Subject가 모두 끝나고나서 마지막 데이터만을 방출함
+- Error가 나면, error값만을 방출함
+
 ### Side-Effect
 
 - { }밖의 외부에 영향을 주는 동작
@@ -119,3 +143,4 @@
 : 등록은 podfile에 `pod 'RxCocoa'`
 
 - UIKit의 요소들을 다룰 때 좋을만한 extension들이 추가로 있음
+- `.bind`를 ㅌ
