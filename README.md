@@ -143,4 +143,4 @@
 : 등록은 podfile에 `pod 'RxCocoa'`
 
 - UIKit의 요소들을 다룰 때 좋을만한 extension들이 추가로 있음
-- `.bind`를 ㅌ
+- `.bind`를 통해 
